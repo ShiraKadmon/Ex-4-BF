@@ -1,0 +1,5 @@
+/home/hadarash/CLionProjects/Project1/cmake-build-debug/CMakeFiles/MainExecutable.dir
+/home/hadarash/CLionProjects/Project1/cmake-build-debug/CMakeFiles/CalcTests.dir
+/home/hadarash/CLionProjects/Project1/cmake-build-debug/CMakeFiles/test.dir
+/home/hadarash/CLionProjects/Project1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/hadarash/CLionProjects/Project1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

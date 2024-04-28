@@ -17,6 +17,8 @@
 #include "Converting.h"
 #include "Data.h"
 #include "MenuConsole.h"
+#include "MenuSocket.hpp"
+
 #include "FirstMenu.h"
 
 // App - creates an app and runs it using menu, first menu, commands and data
@@ -27,10 +29,11 @@ private:
     std::unordered_map<std::string, ICommand *> commands;
     Data data;
     FirstMenu *firstMenu{};
+    int clientfd;
 
 public:
     // constructor
-    App();
+    App(int clientfd);
     // run the app
     void run();
     // destructor - frees the allocated memory for app

@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -56,4 +54,3 @@ int main() {
     close(server_fd);
     return 0;
 }
-

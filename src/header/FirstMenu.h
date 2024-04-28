@@ -20,6 +20,9 @@ public:
     FirstMenu();
     // get the input line and return the menu data array if valid, run again otherwise
     std::vector<int> getFirstLine();
+    
+    std::vector<int> getFirstLine(int sockfd);
+    
     // return true if the input is valid, false otherwise
     bool validation(std::string line);
 };

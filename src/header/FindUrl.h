@@ -9,7 +9,7 @@
 // Files
 #include "ICommand.h"
 #include "AddUrl.h"
-#include "../header/Data.h"
+#include "Data.h"
 
 // Find Url - prints the results of the url search
 class FindUrl : public ICommand
@@ -23,7 +23,7 @@ public:
     // constructor using data
     FindUrl(Data& data);
     // check if the bitArray at the index of the hash is true or false and print it
-    void execute(std::string url) override;
+    void execute(std::string url, std::string& result) override;
 };
 
 #endif

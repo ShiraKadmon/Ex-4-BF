@@ -16,8 +16,7 @@
 #include "FindUrl.h"
 #include "Converting.h"
 #include "Data.h"
-#include "MenuConsole.h"
-#include "MenuSocket.hpp"
+#include "MenuSocket.h"
 
 #include "FirstMenu.h"
 

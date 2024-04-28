@@ -2,7 +2,7 @@
 #define ADDURL_H
 
 #include <iostream>
-#include <hash_fun.h>
+//#include <hash_fun.h>
 #include <functional>
 #include <stdexcept>
 
@@ -21,7 +21,7 @@ public:
     // constructor using data
     AddUrl(Data& data);
     // executes the menu choice to add the url to the blacklist
-    void execute(std::string url) override;
+    void execute(std::string url, std::string& result) override;
 };
 
 #endif

@@ -1,6 +1,37 @@
-#include "../header/MenuConsole.h"
+#include "../header/MenuSocket.h"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
 
-MenuConsole::MenuConsole(Data& data) : data(data)
+
+// Function to read one byte at a time from a socket until '\n' is received
+std::string readLine(int sockfd) {
+    std::string line;
+    char ch;
+    ssize_t size;
+
+    // Continuously read one byte
+    while ((size = recv(sockfd, &ch, 1, 0)) > 0) { // Using recv with a size of 1 byte
+        if (ch == '\n') {  // Check if the byte is a newline character
+            break;  // Exit the loop if newline is found
+        }
+        line += ch;  // Append the character to the line string
+    }
+
+    if(size == 0) {
+        return "-1";
+    }
+    
+    if (size == -1) {
+        // Handle errors appropriately
+        perror("recv failed");
+    }
+
+    return line;
+}
+
+    
+MenuSocket::MenuSocket(Data& data, int sockfd) : data(data), sockfd(sockfd)
 {
     addUrl = new AddUrl(data);
     findUrl = new FindUrl(data);
@@ -9,21 +40,17 @@ MenuConsole::MenuConsole(Data& data) : data(data)
     commands["2"] = findUrl;
 }
 
-std::string MenuConsole::nextCommand()
+std::string MenuSocket::nextCommand()
 {
-    std::string line;
+    std::string line = readLine(sockfd);
     // use get-line to read the entire line, including spaces
-    std::getline(std::cin, line);
-    // if the line contains valid input - return it
-    if (validate(line))
-    {
+    if (validate(line)) {
         return line;
     }
-    // otherwise - run again
-    return nextCommand();
+    return "";
 }
 
-bool MenuConsole::validate(std::string input)
+bool MenuSocket::validate(std::string input)
 {
     // separate the line to first and second words
     std::istringstream iss(input);
@@ -57,13 +84,13 @@ void displayError(String error){
 };
 */
 
-std::unordered_map<std::string, ICommand *> MenuConsole::getCommands()
+std::unordered_map<std::string, ICommand *> MenuSocket::getCommands()
 {
     // Return the set of commands this menu has
     return commands;
 }
 
-MenuConsole::~MenuConsole()
+MenuSocket::~MenuSocket()
 {
     // release the memory allocated for addUrl
     delete addUrl;

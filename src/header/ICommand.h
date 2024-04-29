@@ -9,7 +9,7 @@ class ICommand
 {
 public:
     // executes the command using the url
-    virtual void execute(std::string url) = 0;
+    virtual void execute(std::string url, std::string& result) = 0;
     // releases the allocated memory
     virtual ~ICommand() = default;
 };

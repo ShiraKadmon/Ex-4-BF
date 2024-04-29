@@ -4,10 +4,10 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "../header/Data.h"
-#include "../header/IMenu.h"
-#include "../header/AddUrl.h"
-#include "../header/ICommand.h"
+#include "Data.h"
+#include "IMenu.h"
+#include "AddUrl.h"
+#include "ICommand.h"
 
 // Menu Console - the menu dedicated for reading and validating commands from the user
 class MenuSocket : public IMenu

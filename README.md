@@ -5,45 +5,42 @@ https://github.com/ShiraKadmon/Ex-4-BF/wiki
 
 Please make sure that you have MongoDB and Docker installed and running.
 
-
 There are three repositories:
 
-1) Ex-4-BF
+  1) Ex-4-BF - Bloom Filter (current repository)
+  
+  2) EX3-SHELLY-HADAR-SHIRA (the relevant branch is EX4) - Server & Client-side web project
+    Link: https://github.com/ShellyGendler/EX3-SHELLY-HADAR-SHIRA/tree/EX4
+  
+  3) Project3Android (the relevant branch is EX4) - Android project
+    Link: https://github.com/ShiraKadmon/Project3Android/tree/EX4
 
-2) EX3-SHELLY-HADAR-SHIRA (the relevant branch is EX4)
+# Run the Project
+To run the server - in Ex-4-BF source dir run the following commands:
 
-3) Project3Android (the relevant branch is EX4)
-
-
-In Ex-4-BF source dir run the following commands:
-
-1) docker build -t tcpserver .
-
-2) docker run -p 8080:8080 tcpserver
-
-
-After that, in EX3-SHELLY-HADAR-SHIRA (branch EX4):
-
-1) cd api-server
-
-2) npm run develop
+  1) docker build -t tcpserver .
+  
+  2) docker run -p 8080:8080 tcpserver
 
 
-Now the server is running.
+Then, in EX3-SHELLY-HADAR-SHIRA (branch EX4):
+
+  1) cd api-server
+  
+  2) npm run develop
 
 
-Then, to run the android application:
+Now that the server is set, to run the android application:
 
-Open the repository Android3Project (branch EX4), and run the project in Android Studio.
+  1) Open the Android3Project repository (branch EX4), and run the project in Android Studio according to the instructions.
 
 
-Or, to run the Website:
+Or, to run the website - remain in EX3-SHELLY-HADAR-SHIRA repository (branch EX4) and run the following commands:
 
-Remain in repository EX3-SHELLY-HADAR-SHIRA (branch EX4) and run the following commands:
+  1) cd ..
+  
+  2) cd client
+  
+  3) npm start
 
-1) cd ..
-
-2) cd client
-
-3) npm start
-Then the website should start running in address - localhost:3001
+  Then the website should start running in address - localhost:3001

@@ -1,6 +1,9 @@
 # Ex-4-BF
-Wiki page: https://github.com/ShiraKadmon/Ex-4-BF/wiki
 
+link to wiki:
+https://github.com/ShiraKadmon/Ex-4-BF/wiki 
+
+Please make sure that you have MongoDB and Docker installed and running.
 
 There are three repositories:
 
